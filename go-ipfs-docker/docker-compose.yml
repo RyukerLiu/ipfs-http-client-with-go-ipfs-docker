@@ -1,0 +1,12 @@
+version: '3'
+services:
+  go-ipfs:
+    image: ipfs/go-ipfs:v0.4.19
+    ports: 
+      - 4001:4001
+      - 5001:5001
+      - 8080:8080
+    volumes:
+      - ${IPFS_STAGING:-./staging}:/export
+      - ${IPFS_DATA:-./data}:/data/ipfs
+  
